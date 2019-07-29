@@ -1,6 +1,6 @@
 package com.semba.revolutcurrencies.di.modules
 
-import com.semba.revolutcurrencies.ui.currenciesScreen.CurrenciesActivity
+import com.semba.revolutcurrencies.ui.currenciesScreen.CurrenciesConverterActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,5 +12,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector(modules = [ViewModelModule::class])
-    abstract fun contributeCurrenciesActivity(): CurrenciesActivity
+    abstract fun contributeCurrenciesActivity(): CurrenciesConverterActivity
 }
