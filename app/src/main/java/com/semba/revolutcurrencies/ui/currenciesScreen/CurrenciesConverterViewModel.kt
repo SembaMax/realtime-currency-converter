@@ -1,5 +1,6 @@
 package com.semba.revolutcurrencies.ui.currenciesScreen
 
+import android.os.Handler
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.semba.revolutcurrencies.base.BaseViewModel
@@ -23,7 +24,8 @@ class CurrenciesConverterViewModel
                     ,private val logger: Logger): BaseViewModel<ICurrenciesNavigator>() {
 
     companion object {
-        var defaultBase = "EUR"
+        const val defaultBase = "EUR"
+        const val RETRY_NUMBER = 10L
     }
 
     var currenciesData = MutableLiveData<LatestCurrenciesResponse>()
@@ -63,6 +65,7 @@ class CurrenciesConverterViewModel
         mCompositeDisposable.add(currenciesRepository.callGetLatestCurrenciesApi(base)
             .observeOn(mSchedulerProvider.ui())
             .subscribeOn(mSchedulerProvider.io())
+            .retry(RETRY_NUMBER)
             .subscribeWith(object : DisposableObserver<LatestCurrenciesResponse>(){
                 override fun onComplete() {
                     handleLoading(false)
