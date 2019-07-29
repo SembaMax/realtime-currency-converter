@@ -10,8 +10,8 @@ it's a real-time currency converter which is powered by Revolut apis service.
 
 
 ## Tech Stack
-*MVVM
-*Dagger
-*Kotlin Coroutines
-*Retrofit
-*Rx
+- MVVM
+- Dagger
+- Kotlin Coroutines
+- Retrofit
+- Rx
