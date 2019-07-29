@@ -58,9 +58,8 @@ class CurrenciesConverterViewModel
     {
         //Show loading indicator only on the first time.
         if (currenciesData.value == null)
-            this.isLoading.value = true
+            handleLoading(true)
 
-        mNavigator?.get()?.toggleLoading(true)
         mCompositeDisposable.add(currenciesRepository.callGetLatestCurrenciesApi(base)
             .observeOn(mSchedulerProvider.ui())
             .subscribeOn(mSchedulerProvider.io())
