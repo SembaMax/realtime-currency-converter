@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RevolutCurrencies</string>
+    <string name="converter_header">Converter</string>
+    <string name="something_went_wrong">something went wrong</string>
+    <string name="check_connection">Check the connection</string>
+
+</resources>

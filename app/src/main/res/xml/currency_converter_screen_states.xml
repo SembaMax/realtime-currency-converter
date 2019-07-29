@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConstraintLayoutStates xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <State
+            android:id="@+id/normal"
+            app:constraints="@layout/activity_currencies_normal"/>
+    <State
+            android:id="@+id/loading"
+            app:constraints="@layout/activity_currencies_loading"/>
+
+</ConstraintLayoutStates>
